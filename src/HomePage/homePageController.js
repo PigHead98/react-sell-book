@@ -3,8 +3,7 @@ import axios from "axios";
 import HomePageView from "./view/homePageView";
 
 import {
-    CardColumns, Container, Row, Col, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+    CardColumns, Container, Row
 } from 'reactstrap';
 
 export class HomePageController extends Component {
