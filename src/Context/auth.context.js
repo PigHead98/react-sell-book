@@ -17,11 +17,10 @@ export class AuthProvider extends Component {
 
     addNewAuth ( info ) {
         return ( e ) => {
-            console.log(info);
             e.preventDefault();
             axios( {
                 method : 'post',
-                url : 'http://192.168.1.9:8888/users/login',
+                url : process.env.REACT_APP_SERVER_URL + '/users/login',
                 data : info
             } )
                 .then( res => {

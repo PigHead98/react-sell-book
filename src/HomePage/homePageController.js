@@ -24,7 +24,7 @@ export class HomePageController extends Component {
     }
 
     componentDidMount () {
-        axios.get( "http://192.168.1.9:8888/book" )
+        axios.get( process.env.REACT_APP_SERVER_URL + "/book" )
             .then( res => {
                 this.setState( state => {
                     return {
