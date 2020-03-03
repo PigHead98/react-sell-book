@@ -24,7 +24,14 @@ export class HomePageController extends Component {
     }
 
     componentDidMount () {
-        axios.get( process.env.REACT_APP_SERVER_URL + "/book" )
+
+        axios( {
+            method : 'get',
+            url : process.env.REACT_APP_SERVER_URL + "/book",
+            headers: {
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlNTMzZmQyYjMxMjg1OWRjMDU3NTUyMyIsIm5hbWUiOiLEkMOgbyBUcsaw4budbmcgQW4iLCJlbWFpbCI6InRlc3RAZy5tIn0sImlhdCI6MTU4MzIzMTUxMSwiZXhwIjoxNTgzMjM1MTExfQ.MMlFGHQsNdetf1IvoNcvdNgA6Ag5K5RBSSpmvXxkDpk'
+            },
+        } )
             .then( res => {
                 this.setState( state => {
                     return {
